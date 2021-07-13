@@ -10,6 +10,9 @@
 				"-Wextra",
 				"-Werror",
 				"-g",
+				"${workspaceRoot}/get_next_line.h",
+				//"${workspaceRoot}/get_next_line.c",
+				"${workspaceRoot}/get_next_line_utils.c",
 				"${relativeFileDirname}/${fileBasename}",
 				"-o",
 				"build/${fileBasenameNoExtension}.out"

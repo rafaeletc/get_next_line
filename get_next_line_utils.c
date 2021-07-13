@@ -6,12 +6,11 @@
 /*   By: rde-lima <rde-lima@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 16:02:04 by rde-lima          #+#    #+#             */
-/*   Updated: 2021/07/13 20:00:16 by rde-lima         ###   ########.fr       */
+/*   Updated: 2021/07/13 20:22:04 by rde-lima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
 
 /*
 ** Declaração da variável estática só inicializa uma vez durante a execução,

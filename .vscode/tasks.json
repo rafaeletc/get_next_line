@@ -1,30 +1,33 @@
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"type": "cppbuild",
-			"label": "C/C++: gcc arquivo de build ativo",
-			"command": "/usr/bin/gcc",
-			"args": [
-				"-Wall",
-				"-Wextra",
-				"-Werror",
-				"-g",
-				"${workspaceRoot}/get_next_line.h",
-				//"${workspaceRoot}/get_next_line.c",
-				"${workspaceRoot}/get_next_line_utils.c",
-				"${relativeFileDirname}/${fileBasename}",
-				"-o",
-				"build/${fileBasenameNoExtension}.out"
-			],
-			"options": {
-				"cwd": "${workspaceRoot}"
-			},
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": "build",
-			"detail": "compilador: /usr/bin/gcc"
-		}
-	]
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: gcc arquivo de build ativo",
+            "command": "/usr/bin/gcc",
+            "args": [
+                "-Wall",
+                "-Wextra",
+                "-Werror",
+                "-g",
+                "get_next_line.h",
+                "get_next_line_utils.c",
+                //"get_next_line.c",
+                "${file}",
+                "-o",
+                "build/${fileBasenameNoExtension}.out"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Tarefa gerada pelo Depurador."
+        }
+    ],
+    "version": "2.0.0"
 }

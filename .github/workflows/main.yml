@@ -1,0 +1,23 @@
+
+---
+name: 'deploy'
+
+on:
+  push:
+    branches:
+      - ft
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloning repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Push to vogsphere
+        uses: dokku/github-action@v1.0.1
+        with:
+          git_remote_url: 'git@vogsphere-v2.42sp.org.br:vogsphere/intra-uuid-d43e9dcf-65f4-4ad1-84db-a6ecf9749df4-3655817'
+          ssh_private_key: ${{ secrets.FT_SSH_PRIVATE_KEY }}

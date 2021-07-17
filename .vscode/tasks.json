@@ -9,15 +9,12 @@
                 "-Wextra",
                 "-Werror",
                 "-g",
-                "get_next_line.h",
-                "get_next_line_utils.c",
-                //"get_next_line.c",
-                "${file}",
+                "${fileBasename}",
                 "-o",
-                "build/${fileBasenameNoExtension}.out"
+                "${workspaceFolder}/build/${fileBasenameNoExtension}.out"
             ],
             "options": {
-                "cwd": "${workspaceFolder}"
+                "cwd": "${fileDirname}"
             },
             "problemMatcher": [
                 "$gcc"

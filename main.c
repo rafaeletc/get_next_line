@@ -6,12 +6,13 @@
 /*   By: rde-lima <rde-lima@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 20:00:37 by rde-lima          #+#    #+#             */
-/*   Updated: 2021/07/13 23:37:21 by rde-lima         ###   ########.fr       */
+/*   Updated: 2021/07/17 16:19:24 by rde-lima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
-#include "get_next_line.h"
+#include <unistd.h>
+#include <stdio.h>
+#include <fcntl.h>
 
 void	static_call(void)
 {
@@ -35,7 +36,11 @@ void	dynamic_call(void)
 
 int	main(void)
 {
+	int	fd;
+
 	static_call();
 	dynamic_call();
+	fd = open("file3", O_RDONLY);
+	printf("\nfd = %d\n", fd);
 	return (0);
 }

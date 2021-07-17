@@ -6,11 +6,23 @@
 /*   By: rde-lima <rde-lima@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 20:00:37 by rde-lima          #+#    #+#             */
-/*   Updated: 2021/07/17 16:34:55 by rde-lima         ###   ########.fr       */
+/*   Updated: 2021/07/17 18:49:23 by rde-lima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+
+void	static_func(void);
+void	dynamic_func(void);
+void	static_call(void);
+void	dynamic_call(void);
+
+int	main(void)
+{
+	static_call();
+	dynamic_call();
+	return (0);
+}
 
 /*
 ** Declaração da variável estática só inicializa uma vez durante a execução,
@@ -57,10 +69,4 @@ void	dynamic_call(void)
 	dynamic_func();
 	dynamic_func();
 	dynamic_func();
-}
-
-int	main(void)
-{
-	static_call();
-	dynamic_call();
 }

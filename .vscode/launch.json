@@ -30,7 +30,7 @@
 			"type": "cppdbg",
 			"request": "launch",
 			"program": "${workspaceFolder}/build/${fileBasenameNoExtension}.out",
-			"args": ["${workspaceFolder}/sndbx/file1"],
+			"args": ["${workspaceFolder}/sndbx/lusiadas.txt"],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",
 			"environment": [],

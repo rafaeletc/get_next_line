@@ -5,12 +5,16 @@ name: 'deploy'
 on:
   push:
     branches:
-      - ft
+      - vogsphere
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Configing git user.name
+        run: git config --global user.name "Rafael de Lima Franco"
+      - name: Configing git user.email
+        run: git config --global user.email "rde-lima@student.42sp.org.br"
       - name: Cloning repo
         uses: actions/checkout@v2
         with:

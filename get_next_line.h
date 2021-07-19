@@ -6,7 +6,7 @@
 /*   By: rde-lima <rde-lima@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 19:55:54 by rde-lima          #+#    #+#             */
-/*   Updated: 2021/07/13 20:26:02 by rde-lima         ###   ########.fr       */
+/*   Updated: 2021/07/19 01:23:41 by rde-lima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,14 @@
 # define GET_NEXT_LINE_H
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
 
-//char	*get_next_line(int fd);
-void	static_func(void);
-void	dynamic_func(void);
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 8
+# endif
+
+char	*ft_strchr(const char *s, int c);
+size_t	ft_strlen(const char *s);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*get_next_line(int fd);
 
 #endif

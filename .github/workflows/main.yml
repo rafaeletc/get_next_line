@@ -1,9 +1,14 @@
 name: Mirroring
 
-on: [push, delete]
+on:
+  push:
+    branches:
+    - master
+  delete:
+    - master
 
 jobs:
-  to_gitlab:
+  to_vogsphere:
     runs-on: ubuntu-18.04
     steps:                                              # <-- must use actions/checkout@v1 before mirroring!
     - uses: actions/checkout@v1

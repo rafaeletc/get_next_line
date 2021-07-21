@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rde-lima <rde-lima@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: rafaeletc <rafaeletc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 20:11:06 by rde-lima          #+#    #+#             */
-/*   Updated: 2021/07/21 05:14:50 by rde-lima         ###   ########.fr       */
+/*   Updated: 2021/07/21 07:14:47 by rafaeletc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,26 +23,23 @@ char	*get_next_line(int fd)
 
 	buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (fd < 0 || BUFFER_SIZE < 1 || !buf)
-	{
-		free(buf);
 		return (NULL);
-	}
 	if (cache && ft_strchr(cache, '\n'))
 		cache = ft_strtrunc(cache, '\n');
 	else
 		cache = NULL;
 	file = read(fd, buf, BUFFER_SIZE);
-	buf[file] = '\0';
 	while (file > 0)
 	{
+		buf[file] = '\0';
 		cache = ft_strjoin(cache, buf);
 		if (ft_strchr(buf, '\n'))
 			break ;
 		free(buf);
 		buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 		file = read(fd, buf, BUFFER_SIZE);
-		buf[file] = '\0';
 	}
+	free(buf);
 	return (ft_getline(cache));
 }
 

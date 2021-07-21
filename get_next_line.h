@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rde-lima <rde-lima@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: rafaeletc <rafaeletc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 19:55:54 by rde-lima          #+#    #+#             */
-/*   Updated: 2021/07/21 05:10:06 by rde-lima         ###   ########.fr       */
+/*   Updated: 2021/07/21 07:12:00 by rafaeletc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE	8
+#  define BUFFER_SIZE	10000
 # endif
 
 size_t	ft_strlen(const char *str);

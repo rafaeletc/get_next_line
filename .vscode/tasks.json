@@ -30,6 +30,39 @@
         },
         {
             "type": "cppbuild",
+            "label": "build get_next_line fsanitize",
+            "command": "/usr/bin/gcc",
+            "args": [
+                "-Wall",
+                "-Wextra",
+                "-Werror",
+                "-fsanitize=address",
+                "-fsanitize=undefined",
+                "-fno-sanitize-recover=all",
+                "-fno-sanitize=null",
+                "-fno-sanitize=alignment",
+                "-g",
+                "${workspaceFolder}/get_next_line.h",
+                "${workspaceFolder}/get_next_line_utils.c",
+                "${workspaceFolder}/get_next_line.c",
+                "${fileBasename}",
+                "-o",
+                "${workspaceFolder}/build/${fileBasenameNoExtension}.out"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Tarefa gerada pelo Depurador."
+        },
+        {
+            "type": "cppbuild",
             "label": "build simples",
             "command": "/usr/bin/gcc",
             "args": [

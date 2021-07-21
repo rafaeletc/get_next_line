@@ -6,7 +6,7 @@
 /*   By: rafaeletc <rafaeletc@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 13:01:10 by rde-lima          #+#    #+#             */
-/*   Updated: 2021/07/21 07:13:23 by rafaeletc        ###   ########.fr       */
+/*   Updated: 2021/07/21 08:50:43 by rafaeletc        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,19 @@
 #include <stdio.h>
 
 void	test4(void);
+void	gnlTester(void);
 
 int	main(void)
 {
 	int		fd;
 	int		i;
 
-	fd = open("gnlTester/files/big_line_no_nl", O_RDONLY, 0);
-	//fd = open("sndbx/lusiadas.txt", O_RDONLY, 0);
+	fd = open("sndbx/lusiadas.txt", O_RDONLY, 0);
 	i = 0;
 	while (i++ < 30)
 		printf("%s", get_next_line(fd));
-	//test4();
+	test4();
+	gnlTester();
 	return (0);
 }
 
@@ -55,4 +56,76 @@ void	test4(void)
 	printf("\nfile4\n");
 	while (++i <= 9)
 		printf("%s", get_next_line(fd));
+	fd = open("sndbx/file5", O_RDONLY, 0);
+	i = 0;
+	printf("\nfile5\n");
+	while (++i <= 5)
+		printf("%s", get_next_line(fd));
+}
+
+void	gnlTester(void)
+{
+	int	fd;
+	int	i;
+
+	printf("\n41_no_nl\n");
+	fd = open("gnlTester/files/41_no_nl", O_RDONLY, 0);
+	printf("%s", get_next_line(fd));
+	printf("\n41_with_nl\n");
+	fd = open("gnlTester/files/41_with_nl", O_RDONLY, 0);
+	printf("%s", get_next_line(fd));
+	printf("%s", get_next_line(fd));
+	printf("\n42_no_nl\n");
+	fd = open("gnlTester/files/42_no_nl", O_RDONLY, 0);
+	printf("%s", get_next_line(fd));
+	printf("\n42_with_nl\n");
+	fd = open("gnlTester/files/42_with_nl", O_RDONLY, 0);
+	printf("%s", get_next_line(fd));
+	printf("%s", get_next_line(fd));
+	printf("\n43_no_nl\n");
+	fd = open("gnlTester/files/43_no_nl", O_RDONLY, 0);
+	printf("%s", get_next_line(fd));
+	printf("\n43_with_nl\n");
+	fd = open("gnlTester/files/43_with_nl", O_RDONLY, 0);
+	printf("%s", get_next_line(fd));
+	printf("%s", get_next_line(fd));
+	printf("\nalternate_line_nl_no_nl\n");
+	fd = open("gnlTester/files/alternate_line_nl_no_nl", O_RDONLY, 0);
+	i = 0;
+	while (i++ <= 9)
+		printf("%s", get_next_line(fd));
+	printf("\nalternate_line_nl_with_nl\n");
+	fd = open("gnlTester/files/alternate_line_nl_with_nl", O_RDONLY, 0);
+	i = 0;
+	while (i++ <= 10)
+		printf("%s", get_next_line(fd));
+	printf("\nbig_line_no_nl\n");
+	fd = open("gnlTester/files/big_line_no_nl", O_RDONLY, 0);
+	printf("%s", get_next_line(fd));
+	printf("\nbig_line_with_nl\n");
+	fd = open("gnlTester/files/big_line_with_nl", O_RDONLY, 0);
+	printf("%s", get_next_line(fd));
+	printf("%s", get_next_line(fd));
+	printf("\nempty\n");
+	fd = open("gnlTester/files/", O_RDONLY, 0);
+	printf("%s", get_next_line(fd));
+	printf("\nmultiple_line_with_nl\n");
+	fd = open("gnlTester/files/multiple_line_with_nl", O_RDONLY, 0);
+	i = 0;
+	while (i++ <= 5)
+		printf("%s", get_next_line(fd));
+	printf("\nmultiple_line_no_nl\n");
+	fd = open("gnlTester/files/multiple_line_no_nl", O_RDONLY, 0);
+	i = 0;
+	while (i++ <= 6)
+		printf("%s", get_next_line(fd));
+	printf("\nmultiple_nlx5\n");
+	fd = open("gnlTester/files/multiple_nlx5", O_RDONLY, 0);
+	i = 0;
+	while (i++ <= 6)
+		printf("%s", get_next_line(fd));
+	printf("\nnl\n");
+	fd = open("gnlTester/files/nl", O_RDONLY, 0);
+	printf("%s", get_next_line(fd));
+	printf("%s", get_next_line(fd));
 }

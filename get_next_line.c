@@ -6,41 +6,77 @@
 /*   By: rde-lima <rde-lima@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 20:11:06 by rde-lima          #+#    #+#             */
-/*   Updated: 2021/07/19 12:35:12 by rde-lima         ###   ########.fr       */
+/*   Updated: 2021/07/21 05:14:50 by rde-lima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-void	ft_readline(int fd, char *buf, char **s)
-{
-	ssize_t	i;
-
-	i = read(fd, buf, BUFFER_SIZE);
-	while (i > 0)
-	{
-		buf[i] = '\0';
-		*s = ft_substr(buf, 0, i);
-		if (ft_strchr(buf, '\n'))
-			break ;
-		i = read(fd, buf, BUFFER_SIZE);
-	}
-	if (i == 0)
-		*s = 0;
-	free(buf);
-}
+static char	*ft_strtrunc(const char *str, char c);
+char		*ft_getline(const char *str);
 
 char	*get_next_line(int fd)
 {
-	static char	*s;
+	static char	*cache;
 	char		*buf;
+	ssize_t		file;
 
-	buf = malloc(sizeof(char) * (BUFFER_SIZE));
-	if (fd < 0 || BUFFER_SIZE < 1 || !buf || read(fd, buf, 0) < 0)
+	buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (fd < 0 || BUFFER_SIZE < 1 || !buf)
 	{
 		free(buf);
 		return (NULL);
 	}
-	ft_readline(fd, buf, &s);
-	return (s);
+	if (cache && ft_strchr(cache, '\n'))
+		cache = ft_strtrunc(cache, '\n');
+	else
+		cache = NULL;
+	file = read(fd, buf, BUFFER_SIZE);
+	buf[file] = '\0';
+	while (file > 0)
+	{
+		cache = ft_strjoin(cache, buf);
+		if (ft_strchr(buf, '\n'))
+			break ;
+		free(buf);
+		buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+		file = read(fd, buf, BUFFER_SIZE);
+		buf[file] = '\0';
+	}
+	return (ft_getline(cache));
+}
+
+static char	*ft_strtrunc(const char *str, char c)
+{
+	size_t	size;
+
+	if (!str)
+		return (NULL);
+	size = 0;
+	while (*str++ != c)
+		++size;
+	return ((char *)str);
+}
+
+char	*ft_getline(const char *str)
+{
+	size_t	size;
+	char	*tmp;
+
+	if (!str)
+		return (NULL);
+	size = 0;
+	if (!ft_strchr(str, '\n'))
+	{
+		str = ft_strjoin(str, "\n");
+		return ((char *)str);
+	}
+	else
+	{
+		while (str[size++] != '\n')
+			;
+		tmp = malloc(sizeof(char) * (size + 1));
+		ft_strlcpy(tmp, str, size + 1);
+		return (tmp);
+	}
 }

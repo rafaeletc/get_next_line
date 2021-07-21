@@ -6,7 +6,7 @@
 /*   By: rde-lima <rde-lima@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 19:55:54 by rde-lima          #+#    #+#             */
-/*   Updated: 2021/07/19 04:27:20 by rde-lima         ###   ########.fr       */
+/*   Updated: 2021/07/21 05:10:06 by rde-lima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@
 # include <stdlib.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 8
+#  define BUFFER_SIZE	8
 # endif
 
+size_t	ft_strlen(const char *str);
 char	*ft_strchr(const char *s, int c);
-size_t	ft_strlen(const char *s);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
+size_t	ft_strlcpy(char *dest, const char *src, size_t size);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strdup(const char *str1);
 char	*get_next_line(int fd);
 
 #endif

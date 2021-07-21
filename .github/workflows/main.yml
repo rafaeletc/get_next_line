@@ -1,23 +1,15 @@
+name: Mirroring
 
----
-name: 'deploy'
-
-on:
-  push:
-    branches:
-      - master
-
-# Ensures that only one mirror task will run at a time.
-concurrency:
-  group: git-mirror
+on: [push, delete]
 
 jobs:
-  git-mirror:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: wearerequired/git-mirror-action@v1
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.FT_SSH_PRIVATE_KEY }}
-        with:
-          source-repo: "git@github.com:rafaeletc/get_next_line.git"
-          destination-repo: "git@vogsphere-v2.42sp.org.br:vogsphere/intra-uuid-d43e9dcf-65f4-4ad1-84db-a6ecf9749df4-3655817"
+  to_gitlab:
+    runs-on: ubuntu-18.04
+    steps:                                              # <-- must use actions/checkout@v1 before mirroring!
+    - uses: actions/checkout@v1
+    - uses: pixta-dev/repository-mirroring-action@v1
+      with:
+        target_repo_url:
+          git@vogsphere-v2.42sp.org.br:vogsphere/intra-uuid-d43e9dcf-65f4-4ad1-84db-a6ecf9749df4-3655817
+        ssh_private_key:                                # <-- use 'secrets' to pass credential information.
+          ${{ secrets.FT_SSH_PRIVATE_KEY }}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_get_next_line.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafaeletc <rafaeletc@student.42.fr>        +#+  +:+       +#+        */
+/*   By: rde-lima <rde-lima@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 13:01:10 by rde-lima          #+#    #+#             */
-/*   Updated: 2021/07/21 08:50:43 by rafaeletc        ###   ########.fr       */
+/*   Updated: 2021/10/16 17:55:12 by rde-lima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int	main(void)
 	while (i++ < 30)
 		printf("%s", get_next_line(fd));
 	test4();
-	gnlTester();
 	return (0);
 }
 
@@ -59,7 +58,7 @@ void	test4(void)
 	fd = open("sndbx/file5", O_RDONLY, 0);
 	i = 0;
 	printf("\nfile5\n");
-	while (++i <= 5)
+	while (++i <= 4)
 		printf("%s", get_next_line(fd));
 }
 

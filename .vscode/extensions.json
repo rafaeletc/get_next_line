@@ -1,0 +1,14 @@
+{
+	"recommendations": [
+		"dracula-theme.theme-dracula",
+		"kube.42header",
+		"mariusvanwijk-joppekoers.codam-norminette-3",
+		"sohamkamani.code-eol",
+		"ms-vscode.cpptools",
+		"jeff-hykin.better-cpp-syntax",
+		"aaron-bond.better-comments",
+		"cschlosser.doxdocgen",
+		"mhutchie.git-graph",
+		"pomdtr.excalidraw-editor"
+	]
+}

@@ -4,23 +4,9 @@
 			"path": "."
 		}
 	],
-	"extensions": {
-		"recommendations": [
-			"ms-vscode.cpptools",
-			"kube.42header",
-			"mariusvanwijk-joppekoers.codam-norminette-3",
-			"sohamkamani.code-eol",
-			"jeff-hykin.better-cpp-syntax",
-			"aaron-bond.better-comments",
-			"cschlosser.doxdocgen",
-			"dracula-theme.theme-dracula",
-			"mhutchie.git-graph"
-		]
-	},
 	"settings": {
 		"editor.renderWhitespace": "all",
 		"editor.fontSize": 16.5,
-		"editor.fontFamily": "'Fira Code Retina', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
 		"editor.cursorStyle": "block",
 		"editor.multiCursorModifier": "ctrlCmd",
 		"editor.comments.insertSpace": false,
@@ -35,12 +21,12 @@
 		},
 		"files.trimTrailingWhitespace": true,
 		"files.insertFinalNewline": true,
-		"code-eol.color": "#444555",
+		"code-eol.color": "#9fced11f",
 		"workbench.colorCustomizations": {
 			"editor.lineHighlightBackground": "#1073cf2d",
 			"editor.lineHighlightBorder": "#9fced11f"
 		},
-		"workbench.colorTheme": "Dracula",
+		"workbench.colorTheme": "Dracula Soft",
 		"42header.email": "rde-lima@student.42sp.org.br",
 		"42header.username": "rde-lima",
 		"better-comments.highlightPlainText": true,

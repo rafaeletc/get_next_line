@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafaeletc <rafaeletc@student.42.fr>        +#+  +:+       +#+        */
+/*   By: rde-lima <rde-lima@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 16:02:04 by rde-lima          #+#    #+#             */
-/*   Updated: 2021/07/21 07:17:55 by rafaeletc        ###   ########.fr       */
+/*   Updated: 2021/10/16 17:25:01 by rde-lima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,27 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	while (*s2 != '\0')
 		str[size++] = *s2++;
 	str[size] = '\0';
+	return (str);
+}
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*str;
+	size_t	size;
+
+	if (!s)
+		return (NULL);
+	if (start > ft_strlen(s))
+		return (ft_strdup(""));
+	if (start < ft_strlen(s))
+		size = ft_strlen(s) - start;
+	else
+		size = 0;
+	if (size > len)
+		size = len;
+	str = malloc(sizeof(char) * (size + 1));
+	if (!str)
+		return (NULL);
+	ft_strlcpy(str, s + start, size + 1);
 	return (str);
 }

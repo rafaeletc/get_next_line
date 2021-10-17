@@ -6,7 +6,7 @@
 /*   By: rde-lima <rde-lima@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 20:11:06 by rde-lima          #+#    #+#             */
-/*   Updated: 2021/10/17 18:24:34 by rde-lima         ###   ########.fr       */
+/*   Updated: 2021/10/17 19:13:15 by rde-lima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ ssize_t	ft_readfile(int fd, char **buf, char **cache)
 
 char	*ft_writecache(char **cache)
 {
-	size_t	size;
+	ssize_t	size;
 	char	*res;
 	char	*tmp;
 

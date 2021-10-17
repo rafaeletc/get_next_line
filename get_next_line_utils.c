@@ -6,7 +6,7 @@
 /*   By: rde-lima <rde-lima@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 16:02:04 by rde-lima          #+#    #+#             */
-/*   Updated: 2021/10/16 17:25:01 by rde-lima         ###   ########.fr       */
+/*   Updated: 2021/10/17 16:29:25 by rde-lima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,26 +39,6 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
-{
-	size_t	counter;
-	size_t	length;
-
-	if (!dest || !src)
-		return (0);
-	length = ft_strlen(src);
-	if (size == 0)
-		return (length);
-	counter = 0;
-	while (counter < size - 1 && counter < length)
-	{
-		dest[counter] = src[counter];
-		++counter;
-	}
-	dest[counter] = '\0';
-	return (length);
-}
-
 char	*ft_strdup(const char *str1)
 {
 	size_t		counter;
@@ -66,7 +46,9 @@ char	*ft_strdup(const char *str1)
 
 	if (!str1)
 		return (NULL);
-	str = malloc(sizeof(char) * (ft_strlen(str1) + 1));
+	str = malloc(ft_strlen(str1) + 1);
+	if (!str)
+		return (NULL);
 	counter = 0;
 	while (*str1 != '\0')
 		str[counter++] = *str1++;
@@ -86,7 +68,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (ft_strdup(s2));
 	if (!s2)
 		return (ft_strdup(s1));
-	str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	while (*s1 != '\0')
 		str[size++] = *s1++;
 	while (*s2 != '\0')
@@ -97,22 +79,24 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*str;
 	size_t	size;
+	char	*str;
 
 	if (!s)
 		return (NULL);
 	if (start > ft_strlen(s))
 		return (ft_strdup(""));
-	if (start < ft_strlen(s))
-		size = ft_strlen(s) - start;
-	else
-		size = 0;
-	if (size > len)
-		size = len;
-	str = malloc(sizeof(char) * (size + 1));
+	if (start + len > ft_strlen(s))
+		len = ft_strlen(s) - start;
+	str = malloc(len + 1);
 	if (!str)
 		return (NULL);
-	ft_strlcpy(str, s + start, size + 1);
+	size = 0;
+	while (s[start + size] && size < len)
+	{
+		str[size] = s[start + size];
+		++size;
+	}
+	str[size] = '\0';
 	return (str);
 }

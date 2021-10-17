@@ -26,6 +26,27 @@
 			"miDebuggerPath": "/usr/bin/gdb"
 		},
 		{
+			"name": "debug simples com arquivo",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/build/${fileBasenameNoExtension}.out",
+			"args": ["${workspaceFolder}/sndbx/lusiadas.txt"],
+			"stopAtEntry": true,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"setupCommands": [
+				{
+					"description": "Habilitar a reformatação automática para gdb",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				}
+			],
+			"preLaunchTask": "build simples",
+			"miDebuggerPath": "/usr/bin/gdb"
+		},
+		{
 			"name": "debug get_next_line",
 			"type": "cppdbg",
 			"request": "launch",
@@ -47,11 +68,11 @@
 			"miDebuggerPath": "/usr/bin/gdb"
 		},
 		{
-			"name": "debug simples com arquivo",
+			"name": "debug get_next_line fsanitize",
 			"type": "cppdbg",
 			"request": "launch",
 			"program": "${workspaceFolder}/build/${fileBasenameNoExtension}.out",
-			"args": ["${workspaceFolder}/sndbx/lusiadas.txt"],
+			"args": [],
 			"stopAtEntry": true,
 			"cwd": "${workspaceFolder}",
 			"environment": [],
@@ -64,8 +85,8 @@
 					"ignoreFailures": true
 				}
 			],
-			"preLaunchTask": "build simples",
+			"preLaunchTask": "build get_next_line fsanitize",
 			"miDebuggerPath": "/usr/bin/gdb"
-		}
+		},
 	]
 }

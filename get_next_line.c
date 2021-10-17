@@ -6,7 +6,7 @@
 /*   By: rde-lima <rde-lima@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 20:11:06 by rde-lima          #+#    #+#             */
-/*   Updated: 2021/10/17 16:25:53 by rde-lima         ###   ########.fr       */
+/*   Updated: 2021/10/17 17:37:25 by rde-lima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,6 @@ char	*ft_getline(int fd, char **buf, char **cache)
 	ssize_t	file;
 	char	*res;
 
-	if (ft_strchr(*cache, '\n'))
-		return (ft_writecache(cache));
 	file = ft_readfile(fd, buf, cache);
 	if (file <= 0 && !**cache)
 	{

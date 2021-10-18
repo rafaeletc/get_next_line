@@ -6,11 +6,11 @@
 /*   By: rde-lima <rde-lima@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:02:04 by rde-lima          #+#    #+#             */
-/*   Updated: 2021/10/17 21:12:14 by rde-lima         ###   ########.fr       */
+/*   Updated: 2021/10/18 15:11:29 by rde-lima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	ft_strlen(const char *str)
 {

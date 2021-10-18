@@ -6,7 +6,7 @@
 /*   By: rde-lima <rde-lima@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 16:02:04 by rde-lima          #+#    #+#             */
-/*   Updated: 2021/10/17 16:29:25 by rde-lima         ###   ########.fr       */
+/*   Updated: 2021/10/17 21:11:35 by rde-lima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	if (start + len > ft_strlen(s))
 		len = ft_strlen(s) - start;
-	str = malloc(len + 1);
+	str = (char *)malloc(sizeof(char) * len + 1);
 	if (!str)
 		return (NULL);
 	size = 0;

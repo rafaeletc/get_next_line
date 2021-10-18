@@ -6,15 +6,15 @@
 /*   By: rde-lima <rde-lima@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 20:11:06 by rde-lima          #+#    #+#             */
-/*   Updated: 2021/10/17 19:13:15 by rde-lima         ###   ########.fr       */
+/*   Updated: 2021/10/17 21:14:44 by rde-lima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_getline(int fd, char **buf, char **cache);
-ssize_t	ft_readfile(int fd, char **buf, char **cache);
-char	*ft_writecache(char **cache);
+char		*ft_getline(int fd, char **buf, char **cache);
+ssize_t		ft_readfile(int fd, char **buf, char **cache);
+static char	*ft_writecache(char **cache);
 
 char	*get_next_line(int fd)
 {
@@ -31,6 +31,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	res = ft_getline(fd, &buf, &cache);
 	free(buf);
+	buf = NULL;
 	return (res);
 }
 
@@ -43,14 +44,14 @@ char	*ft_getline(int fd, char **buf, char **cache)
 	if (size <= 0 && !**cache)
 	{
 		free(*cache);
-		*cache = ft_strdup("");
+		*cache = NULL;
 		return (NULL);
 	}
 	if (ft_strchr(*cache, '\n'))
 		return (ft_writecache(cache));
 	res = ft_strdup(*cache);
 	free(*cache);
-	*cache = ft_strdup("");
+	*cache = NULL;
 	return (res);
 }
 
@@ -73,7 +74,7 @@ ssize_t	ft_readfile(int fd, char **buf, char **cache)
 	return (res);
 }
 
-char	*ft_writecache(char **cache)
+static char	*ft_writecache(char **cache)
 {
 	ssize_t	size;
 	char	*res;

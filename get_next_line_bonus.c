@@ -6,7 +6,7 @@
 /*   By: rde-lima <rde-lima@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:02:04 by rde-lima          #+#    #+#             */
-/*   Updated: 2021/10/17 18:26:58 by rde-lima         ###   ########.fr       */
+/*   Updated: 2021/10/17 21:12:51 by rde-lima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	res = ft_getline(fd, &buf, &cache[fd]);
 	free(buf);
+	buf = NULL;
 	return (res);
 }
 
@@ -43,14 +44,14 @@ char	*ft_getline(int fd, char **buf, char **cache)
 	if (size <= 0 && !**cache)
 	{
 		free(*cache);
-		*cache = ft_strdup("");
+		*cache = NULL;
 		return (NULL);
 	}
 	if (ft_strchr(*cache, '\n'))
 		return (ft_writecache(cache));
 	res = ft_strdup(*cache);
 	free(*cache);
-	*cache = ft_strdup("");
+	*cache = NULL;
 	return (res);
 }
 

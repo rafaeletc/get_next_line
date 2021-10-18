@@ -68,7 +68,7 @@
 			"miDebuggerPath": "/usr/bin/gdb"
 		},
 		{
-			"name": "debug get_next_line fsanitize",
+			"name": "debug get_next_line_bonus",
 			"type": "cppdbg",
 			"request": "launch",
 			"program": "${workspaceFolder}/build/${fileBasenameNoExtension}.out",
@@ -85,8 +85,8 @@
 					"ignoreFailures": true
 				}
 			],
-			"preLaunchTask": "build get_next_line fsanitize",
+			"preLaunchTask": "build get_next_line_bonus",
 			"miDebuggerPath": "/usr/bin/gdb"
-		},
+		}
 	]
 }

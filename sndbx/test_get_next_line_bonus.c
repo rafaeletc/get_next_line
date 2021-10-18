@@ -6,7 +6,7 @@
 /*   By: rde-lima <rde-lima@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 11:38:10 by rde-lima          #+#    #+#             */
-/*   Updated: 2021/10/18 11:47:34 by rde-lima         ###   ########.fr       */
+/*   Updated: 2021/10/18 11:51:29 by rde-lima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include <stdio.h>
 
 void	test4(void);
-void	lusiadas(void);
 
 int	main(void)
 {

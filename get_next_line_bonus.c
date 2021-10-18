@@ -6,7 +6,7 @@
 /*   By: rde-lima <rde-lima@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:02:04 by rde-lima          #+#    #+#             */
-/*   Updated: 2021/10/17 21:12:51 by rde-lima         ###   ########.fr       */
+/*   Updated: 2021/10/18 00:36:51 by rde-lima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ ssize_t	ft_readfile(int fd, char **buf, char **cache)
 		tmp = *cache;
 		*cache = ft_strjoin(tmp, *buf);
 		free(tmp);
+		tmp = NULL;
 	}
 	return (res);
 }
@@ -89,5 +90,6 @@ char	*ft_writecache(char **cache)
 	res = ft_substr(tmp, 0, size);
 	*cache = ft_strdup(&(*cache)[size]);
 	free(tmp);
+	tmp = NULL;
 	return (res);
 }

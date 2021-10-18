@@ -6,7 +6,7 @@
 /*   By: rde-lima <rde-lima@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 20:31:19 by rde-lima          #+#    #+#             */
-/*   Updated: 2021/07/20 20:59:20 by rde-lima         ###   ########.fr       */
+/*   Updated: 2021/10/18 11:53:07 by rde-lima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include <bsd/string.h>
 
 int	main(void)
 {

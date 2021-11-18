@@ -6,15 +6,15 @@
 /*   By: rde-lima <rde-lima@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:02:04 by rde-lima          #+#    #+#             */
-/*   Updated: 2021/10/18 00:36:51 by rde-lima         ###   ########.fr       */
+/*   Updated: 2021/11/16 14:21:02 by rde-lima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
-char	*ft_getline(int fd, char **buf, char **cache);
-ssize_t	ft_readfile(int fd, char **buf, char **cache);
-char	*ft_writecache(char **cache);
+static char		*ft_getline(int fd, char **buf, char **cache);
+static ssize_t	ft_readfile(int fd, char **buf, char **cache);
+static char		*ft_writecache(char **cache);
 
 char	*get_next_line(int fd)
 {
@@ -35,7 +35,7 @@ char	*get_next_line(int fd)
 	return (res);
 }
 
-char	*ft_getline(int fd, char **buf, char **cache)
+static char	*ft_getline(int fd, char **buf, char **cache)
 {
 	ssize_t	size;
 	char	*res;
@@ -55,7 +55,7 @@ char	*ft_getline(int fd, char **buf, char **cache)
 	return (res);
 }
 
-ssize_t	ft_readfile(int fd, char **buf, char **cache)
+static ssize_t	ft_readfile(int fd, char **buf, char **cache)
 {
 	ssize_t	res;
 	char	*tmp;
@@ -75,7 +75,7 @@ ssize_t	ft_readfile(int fd, char **buf, char **cache)
 	return (res);
 }
 
-char	*ft_writecache(char **cache)
+static char	*ft_writecache(char **cache)
 {
 	ssize_t	size;
 	char	*res;

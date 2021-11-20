@@ -8,11 +8,6 @@
 		"files.associations": {
 			"*.h": "c"
 		},
-		"code-eol.color": "#9fced11f",
-		"workbench.colorCustomizations": {
-			"editor.lineHighlightBackground": "#1073cf2d",
-			"editor.lineHighlightBorder": "#9fced11f"
-		},
 		"workbench.colorTheme": "Dracula Soft",
 		"42header.email": "rde-lima@student.42sp.org.br",
 		"42header.username": "rde-lima",

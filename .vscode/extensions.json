@@ -7,8 +7,9 @@
 		"aaron-bond.better-comments",
 		"cschlosser.doxdocgen",
 		"mhutchie.git-graph",
-		"dalexhd.42-norminette",
 		"jeff-hykin.code-eol",
-		"gurumukhi.selected-lines-count"
+		"gurumukhi.selected-lines-count",
+		"austin.code-gnu-global",
+		"evilcat.norminette-42"
 	]
 }
